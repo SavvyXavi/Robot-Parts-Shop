@@ -1,0 +1,10 @@
+import { Component } from '@angular/core';
+import { RouterLink } from "@angular/router";
+
+@Component({
+  selector: 'bot-site-header',
+  imports: [RouterLink],
+  templateUrl: './site-header.html',
+  styleUrl: './site-header.scss',
+})
+export class SiteHeader {}
