@@ -1,6 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, Signal } from '@angular/core';
 import { ProductDetails } from "../product-details/product-details";
-import { Products } from '../services/products';
+import { ProductsService } from '../services/products';
 import { Product } from '../models/product';
 
 @Component({
@@ -10,13 +10,11 @@ import { Product } from '../models/product';
   styleUrl: './catalog.scss',
 })
 export class Catalog {
-products: Product[];
-constructor(private productsService: Products) {
-  this.products = this.productsService.getProducts();
+  products!: Signal<Product[]>;
+  
+  constructor(private productsService: ProductsService) {
+    this.products = this.productsService.getProducts();
 
-}
+    }
 
-ngOnInit() {
-  this.products =
-}
 }
